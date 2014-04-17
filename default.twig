@@ -22,24 +22,17 @@
             {{widget('clicktocall', 'headerclicktocall', {phoneText: '212 6574 6736'})|raw}}
     </div>
 </header>
-
-<div class="tablet-basket-container">
-    {{widget('ecombasket', 'tabletecombasket', {})|raw}}
-</div>
+    <div class="feature-content">
+        {{widget('feature', 'featurehome', {"header": "", "strapline":"", "buttonText":"Lorem Ipsum","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '0'})|raw}}
+    </div>
 
 <div class="main wrapper clearfix">
-    <div class="main-column1">
-        <div class="feature-content">
-            {{widget('feature', 'featurehome', {"header": "", "strapline":"", "buttonText":"","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '0','showBtn': false})|raw}}
-        </div>
-        {{widget('ecomcheckout', 'ecomcheckout', {})|raw}}
-        {{widget('ecomproductslist', 'ecomlisthome', {})|raw}}
-        {{zone('main')|raw}}
+
+    <div class="tablet-basket-container">
+        {{widget('ecombasket', 'tabletecombasket', {})|raw}}
     </div>
-    <div class="main-column2">
-        {{widget('content', 'maincolumn2content', {"content":"<p>Vivamus rhoncus ipsum tellus, vitae dictum purus euismod in. Nullam sit amet purus pretium, pulvinar diam eget, imperdiet felis. Sed ac tortor nunc. Quisque in fringilla enim. Nullam sit amet purus pretium, pulvinar diam eget, imperdiet felis. Sed ac tortor nunc. Lorem Ipsum dolor sit amet dictum euismod in pueurs diam egeter.</p>"})|raw}}
-        {{widget('socialicons', 'maincolumn2socialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
-    </div>
+    {{widget('ecomproductslist', 'ecomlisthome', {})|raw}}
+    {{zone('main')|raw}}
 </div>
 
 <footer class="bk-footer">
