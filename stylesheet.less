@@ -21,7 +21,7 @@ body {
     padding-bottom: 0;
     padding-left: 0;
     @media @tablet {
-        padding-top: 0;
+        padding-top: 2em;
         padding-right: 0;
         padding-bottom: 2em;
         padding-left: 0;
@@ -547,7 +547,7 @@ body {
             border-bottom: none;
         }
         .companyheader {
-            padding: 2em 0;
+            padding: 3em 0;
             float: left;
             width: 80%;
             .logo, .companyname {
@@ -585,7 +585,7 @@ body {
             }
         }/* end companyheader */
         .widget.clicktocall {
-            padding: 2.9em 0;
+            padding: 3.9em 0;
             float: right;
             @media @mobile {
                 float: none;
@@ -619,9 +619,9 @@ body {
 
 
 .widget.feature .feature-bgimg, .widget.feature .feature-bgimg .content {
-   height: 480px;
+   height: 522px;
    @media @tablet {
-       height: 390px;
+       height: 480px;
    }
    @media @mobile {
        height: 380px;
@@ -638,14 +638,15 @@ body {
     text-align: left;
     position: absolute;
     bottom: 0;
-    padding: 19px 5px;
+    padding: 15px 5px;
     margin: 0 auto; 
     background-color: @color-swatch1;
+    border-bottom: 1px solid @color-swatch7;
     @media @tablet {
         display: none;
     }
     @media @tablet {
-        padding: 1.8em 0 1em;
+        padding: 1em 0;
     }
     @media @mobile {
         padding: 1em 0;
@@ -655,36 +656,35 @@ body {
 /* FEATURE TITLE & STRAPLINE */
 
 .widget.feature .feature-bgimg .content {
-        h2 {
-            font-family: @font-swatch8-font-family;
-            font-size: @font-swatch8-font-size;
-            font-weight: @font-swatch8-font-weight;
-            line-height: @font-swatch8-line-height;
-            color: @font-swatch8-color;
-            letter-spacing: @font-swatch8-letter-spacing;
-            @media @mobile {
-                font-size: bkscale(@font-swatch8-font-size,0.9);
-                line-height: bkscale(@font-swatch8-line-height,0.9);
-            }
+    h2 {
+        font-family: @font-swatch8-font-family;
+        font-size: @font-swatch8-font-size;
+        font-weight: @font-swatch8-font-weight;
+        line-height: @font-swatch8-line-height;
+        color: @font-swatch8-color;
+        letter-spacing: @font-swatch8-letter-spacing;
+        padding: 0;
+        @media @mobile {
+            font-size: bkscale(@font-swatch8-font-size,0.9);
+            line-height: bkscale(@font-swatch8-line-height,0.9);
         }
-        h3 {
-            font-family: @font-swatch9-font-family;
-            font-size: @font-swatch9-font-size;
-            font-weight: @font-swatch9-font-weight;
-            line-height: @font-swatch9-line-height;
-            color: @font-swatch9-color;
-            letter-spacing: @font-swatch9-letter-spacing;
-            @media @mobile {
-                font-size: bkscale(@font-swatch8-font-size,0.9);
-                line-height: bkscale(@font-swatch8-line-height,0.9);
-            }
+    }
+    h3 {
+        font-family: @font-swatch9-font-family;
+        font-size: @font-swatch9-font-size;
+        font-weight: @font-swatch9-font-weight;
+        line-height: @font-swatch9-line-height;
+        color: @font-swatch9-color;
+        letter-spacing: @font-swatch9-letter-spacing;
+        @media @mobile {
+            font-size: bkscale(@font-swatch8-font-size,0.9);
+            line-height: bkscale(@font-swatch8-line-height,0.9);
         }
+    }
+    button {
+        margin: 0.5em 0;
+    }
 }
-
-.widget.feature .feature-bgimg .content button {
-    margin-top: 1em;
-}
-
 
 
 /* ===============================
@@ -1352,27 +1352,28 @@ hr {
    =============================== */
 
 .widget.ecomproductslist {
+    margin-top: 12px;
     .ecom-productslist-product {
-        text-align: center;
-        margin-left: 0;
         @media @mobile {
             padding: 0;
         }
         .ecom-productlist-info {
-            padding-top: 20px;
+            padding-top: 5px;
             .ecom-productslist-title {
-                text-align: center;
                 font-family: @font-swatch5-font-family;
                 font-size: @font-swatch5-font-size;
                 font-weight: @font-swatch5-font-weight;
                 line-height: @font-swatch5-line-height;
                 letter-spacing: @font-swatch5-letter-spacing;
+                padding:0;
                 a {
                     color: @font-swatch5-color;
                 }
             }
             .ecom-productlist-price {
-                color: @color-swatch3;
+                color: @color-swatch2;
+                font-size: bkscale(@font-swatch5-font-size,1.1);
+                font-weight: 600;
             }
         }
     }
@@ -1603,6 +1604,9 @@ hr {
                         color: @color-swatch6;
                         margin: 0;
                         font-size: 1em;
+                        &:hover {
+                            background-color:darken(@color-swatch7,5%);
+                        }
                         @media @tablet {
                             width: 56px;
                             height: 44px;
@@ -1686,21 +1690,13 @@ hr {
             margin-bottom: 1.5em;
             -webkit-appearance: menulist;
         }
-        .delivery-price-tax {
-            text-align: right;
-            font-size: @font-swatch5-font-size;
-            font-weight: @font-swatch5-font-weight;
-            color: @font-swatch5-color;
-            margin-top: 2em;
-            padding: 1em 0;
-            border-top: 1px solid @color-swatch7;
-        }
         .delivery-price {
             text-align: right;
             font-size: @font-swatch3-font-size;
             font-weight: @font-swatch3-font-weight;
             color: @color-swatch3;
             padding: 1em 0.5em;
+            margin-top: 2em;
             border-top: 1px solid @color-swatch7;
             border-bottom: 1px solid @color-swatch7;
         }
