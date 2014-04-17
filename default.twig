@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="bk-pt-home">
+<div class="bk-pt-default">
 
 <div class="nav">
     <div class="nav-extended wrapper">
@@ -22,12 +22,8 @@
             {{widget('clicktocall', 'headerclicktocall', {phoneText: '212 6574 6736'})|raw}}
     </div>
 </header>
-    <div class="feature-content">
-        {{widget('feature', 'featurehome', {"header": "", "strapline":"", "buttonText":"Lorem Ipsum","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '0'})|raw}}
-    </div>
 
 <div class="main wrapper clearfix">
-
     <div class="tablet-basket-container">
         {{widget('ecombasket', 'tabletecombasket', {})|raw}}
     </div>
