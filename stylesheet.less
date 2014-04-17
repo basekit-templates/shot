@@ -554,23 +554,20 @@ body {
             @media @mobile {
                 float: none;
                 text-align: center;
-                padding: 0.3em 0 2.9em;
+                padding: 0.3em 0 2.2em;
             }
             a {
                 @media @mobile {
+                    background-image: image('/images/ic-desktop-call.png');
+                    background-position: 120px center;
                     border: 0;
-                    -webkit-border-radius: 5px;
-                    -moz-border-radius: 5px;
-                    border-radius: 5px;
-                    background-color: @color-swatch7;
-                    -webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.35);
-                    -moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.35);
-                    box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.35);
+                    background-color: lighten(@color-swatch7,10%);
                     color: @color-swatch6;
+                    display: block;
                 }
                 &:hover {
                     @media @mobile {
-                        background-color: darken(@color-swatch7,5%);
+                        background-color: @color-swatch7;
                     }
                 }
             }
