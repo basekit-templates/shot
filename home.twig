@@ -24,14 +24,17 @@
     </div>
 </header>
 
+<div class="tablet-basket-container">
+    {{widget('ecombasket', 'tabletecombasket', {})|raw}}
+</div>
+
 <div class="feature-content">
     {{widget('feature', 'featurehome', {"header": "", "strapline":"", "buttonText":"Lorem Ipsum","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '0'})|raw}}
 </div>
 
+
+
 <div class="main wrapper clearfix">
-    <div class="tablet-basket-container">
-        {{widget('ecombasket', 'tabletecombasket', {})|raw}}
-    </div>
     {{widget('ecomproductslist', 'ecomlisthome', {})|raw}}
     {{zone('main')|raw}}
 </div>

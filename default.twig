@@ -23,10 +23,15 @@
     </div>
 </header>
 
+<div class="tablet-basket-container">
+    {{widget('ecombasket', 'tabletecombasket', {})|raw}}
+</div>
+
 <div class="main wrapper clearfix">
-    <div class="tablet-basket-container">
-        {{widget('ecombasket', 'tabletecombasket', {})|raw}}
-    </div>
+
+    {{widget('ecomcheckout', 'ecomcheckout', {})|raw}}
+
+
     {{zone('main')|raw}}
 </div>
 
