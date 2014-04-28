@@ -561,84 +561,85 @@ body {
    HEADER
    =============================== */
 
-.bk-pt-default .bk-header {
+.bk-pt-ecomcheckout .bk-header  {
+    border-bottom: 1px solid @color-swatch7;
+}
+
+.bk-pt-default .bk-header  {
     border-bottom: 1px solid @color-swatch7;
     @media @tablet {
         border-bottom: none;
     }
 }
 
-    .bk-header {
-        width: 100%;
+.bk-header {
+    width: 100%;
+    float: left;
+    .companyheader {
+        padding: 3em 0;
         float: left;
-        @media @tablet {
-            border-bottom: none;
+        width: 80%;
+        .logo, .companyname {
+            display: inline-block;
         }
-        .companyheader {
-            padding: 3em 0;
-            float: left;
-            width: 80%;
-            .logo, .companyname {
-                display: inline-block;
+        .logo {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .companyname {
+            padding: 0.6em 0;
+        }
+        .companyname a {
+            display: block;
+            font-family: @font-swatch10-font-family;
+            font-weight: @font-swatch10-font-weight;
+            color: @font-swatch10-color;
+            line-height: @font-swatch10-line-height;
+            letter-spacing: @font-swatch10-letter-spacing;
+            font-size: @font-swatch10-font-size;
+            &:hover {
+                text-decoration: none;
             }
-            .logo {
-                margin-right: 5px;
-                vertical-align: middle;
-            }
-            .companyname {
-                padding: 0.6em 0;
-            }
-            .companyname a {
-                display: block;
-                font-family: @font-swatch10-font-family;
-                font-weight: @font-swatch10-font-weight;
-                color: @font-swatch10-color;
-                line-height: @font-swatch10-line-height;
-                letter-spacing: @font-swatch10-letter-spacing;
-                font-size: @font-swatch10-font-size;
-                &:hover {
-                    text-decoration: none;
-                }
-                @media @mobile {
-                    font-size: bkscale(@font-swatch10-font-size,0.9);
-                    line-height: bkscale(@font-swatch10-line-height,0.9);
-                }
-            } 
             @media @mobile {
-                float: none;
-                width: auto;
-                margin: 0 auto;
-                text-align: center;
-                display: table;
+                font-size: bkscale(@font-swatch10-font-size,0.9);
+                line-height: bkscale(@font-swatch10-line-height,0.9);
             }
-        }/* end companyheader */
-        .widget.clicktocall {
-            padding: 3.9em 0;
-            float: right;
+        } 
+        @media @mobile {
+            float: none;
+            width: auto;
+            margin: 0 auto;
+            text-align: center;
+            display: table;
+        }
+    }/* end companyheader */
+    .widget.clicktocall {
+        padding: 3.9em 0;
+        float: right;
+        @media @mobile {
+            float: none;
+            text-align: center;
+            padding: 0.3em 0 3.5em;
+        }
+        a {
             @media @mobile {
-                float: none;
-                text-align: center;
-                padding: 0.3em 0 3.5em;
+                background-image: image('/images/ic-desktop-call.png');
+                border: 0;
+                background-color: lighten(@color-swatch7,10%);
+                color: @color-swatch6;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                padding: 10px 10px 10px 37px;
             }
-            a {
+            &:hover {
                 @media @mobile {
-                    background-image: image('/images/ic-desktop-call.png');
-                    border: 0;
-                    background-color: lighten(@color-swatch7,10%);
-                    color: @color-swatch6;
-                    -webkit-border-radius: 5px;
-                    -moz-border-radius: 5px;
-                    border-radius: 5px;
-                    padding: 10px 10px 10px 37px;
-                }
-                &:hover {
-                    @media @mobile {
-                        background-color: @color-swatch7;
-                    }
+                    background-color: @color-swatch7;
                 }
             }
         }
     }
+}
 
 /* ===============================
    FEATURE

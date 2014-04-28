@@ -2,7 +2,7 @@
     "name":"Shot",
     "thumbnail":"shot.png",
     "screenshot":"shot.png",
-    "pageTypes": ["default", "home", "about", "contact", "gallery"],
+    "pageTypes": ["default", "home", "about", "contact", "gallery", "ecomcheckout"],
     "tags": {
     "en": ["clean", "menu", "ecommerce", "shop"],
     "es": ["limpio", "menú", "ecommerce", "tienda"],
