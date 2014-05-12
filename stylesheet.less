@@ -322,7 +322,12 @@ pre { /* fixes code option in editor */
         right: 0;
         bottom: 0;
         p, .basket-count {
-            color: @color-swatch6;
+            font-family: @font-swatch6-font-family;
+            font-size: @font-swatch6-font-size;
+            font-weight: @font-swatch6-font-weight;
+            color: @font-swatch6-color;
+            line-height: @font-swatch6-line-height;
+            letter-spacing: @font-swatch6-letter-spacing;
         }
         p:before {
             content: "";
@@ -338,7 +343,7 @@ pre { /* fixes code option in editor */
         &:hover {
             background-color: darken(@color-swatch7,20%);
             p, .basket-count {
-                color: @color-swatch1;
+                color: @font-swatch6-color-hover;
                 @media @tablet {
                     color: @color-swatch6;
                 }
