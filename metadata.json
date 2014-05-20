@@ -2,6 +2,7 @@
     "name":"Shot",
     "thumbnail":"shot.png",
     "screenshot":"shot.png",
+    "templateType":"ecommerce",
     "pageTypes": ["default", "home", "about", "contact", "gallery", "ecomcheckout"],
     "tags": {
     "en": ["clean", "menu", "ecommerce", "shop"],
