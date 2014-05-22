@@ -1462,8 +1462,8 @@ hr {
         margin: 3% 0 3% 3%;
         display: inline-block;
         @media @tablet {
-            width: 97%;
-            margin: 3% 0 0 3%;
+            width: 100%;
+            margin-bottom: 0;
         }
         @media @mobile {
             background-color: darken(@color-swatch1,5%);
@@ -1477,17 +1477,15 @@ hr {
             display: inline-block;
             margin-bottom: 0;
             @media @tablet {
-                width: 30%;
                 margin-right: 2.5%;
             }
             @media @mobile {
                 width: 100%;
             }
             label[for="productlist-sort"] {
-                display: block;
-                width: 25%;
                 display: inline-block;
-                @media @tablet {
+                margin-right: 5px;
+                @media @mobile {
                     width: 100%;
                 }
             }
@@ -1495,6 +1493,7 @@ hr {
                 display: none;
             }
             select {
+                display: inline-block;
                 -moz-appearance: none;
                 text-indent: 0.01px;
                 text-overflow: '';
@@ -1513,20 +1512,14 @@ hr {
                 border: none;
                 background-color: darken(@color-swatch1,5%);
                 color: @color-swatch5;
-                width: 100%;
                 @media @mobile {
                     border: none;
                     background-color: darken(@color-swatch1,12%);
+                    width: 100%;
                 }
             }
             select::-ms-expand {
                 display: none;
-            }
-            &:first-child select {
-                width: 73%;
-                @media @tablet {
-                    width: 100%;
-                }
             }
         }
     }
