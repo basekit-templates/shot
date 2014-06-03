@@ -812,6 +812,10 @@ pre { /* fixes code option in editor */
                 margin: 0;
                 &:hover {
                     background-color: darken(@color-swatch7,20%);
+                    a {
+                        color: @font-swatch6-color-hover;
+                        text-decoration: none;
+                    }
                 }
                 &:first-child {
                     @media only screen and (max-width: 550px) {
@@ -830,10 +834,6 @@ pre { /* fixes code option in editor */
                     color: @font-swatch6-color;
                     line-height:@font-swatch6-line-height;
                     letter-spacing: @font-swatch6-letter-spacing;
-                    &:hover {
-                        color: @font-swatch6-color-hover;
-                        text-decoration: none;
-                    }
                 }
             }
         }
