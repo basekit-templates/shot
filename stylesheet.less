@@ -403,6 +403,12 @@ pre { /* fixes code option in editor */
                     @media @mobile {
                         max-width: 79%;   
                     }   
+                    .ecombasket-item-title {
+                        text-decoration: underline;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
                     .ecombasket-item-title, .ecombasket-item-count, .ecombasket-item-price, .ecombasket-remove-button {
                         display: inline-block;
                     }
@@ -423,6 +429,7 @@ pre { /* fixes code option in editor */
                         color: @color-swatch3;
                         &:hover {
                             color: @color-swatch5;
+                            text-decoration: none;
                         }
                     }
                 }
@@ -529,6 +536,12 @@ pre { /* fixes code option in editor */
                         @media @mobile {
                             max-width: 79%;   
                         }   
+                        .ecombasket-item-title {
+                            text-decoration: underline;
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
                         .ecombasket-item-title, .ecombasket-item-count, .ecombasket-item-price, .ecombasket-remove-button {
                             display: inline-block;
                         }
@@ -549,6 +562,7 @@ pre { /* fixes code option in editor */
                             color: @color-swatch3;
                             &:hover {
                                 color: @color-swatch5;
+                                text-decoration: none;
                             }
                         }
                     }
@@ -1172,6 +1186,9 @@ pre { /* fixes code option in editor */
         background-color: #ffffff;
         margin-right: 5px;
         margin-bottom: 5px;
+        @media @tablet {
+            width: 100%;
+        }
     }
     .signupform fieldset button, .widget.profile form button {
         padding: 9px 10px 10px;
@@ -1377,7 +1394,10 @@ width: 100%;
             height: 45px;
             margin-right: 5px;
             margin-bottom: 5px;
+            @media @tablet {
+                width: 100%;
             }
+        }
 
         button {
             padding: 10px;
