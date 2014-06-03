@@ -89,7 +89,6 @@ pre { /* fixes code option in editor */
 
 .widget {
     &.extendednavigation {
-        float: none;
         position: relative;
         min-height: 40px;
         width: 90%;
@@ -116,7 +115,6 @@ pre { /* fixes code option in editor */
         }
         ul {
             max-width: 80%;
-            text-align: center;
             padding: 0;
             @media @tablet {
                 /* Hidden until nav icon is clicked */
@@ -128,8 +126,7 @@ pre { /* fixes code option in editor */
                 padding: 40px 0 0;
             }
             li {
-                float: left;
-                display: block;
+                display: inline-block;
                 padding: 5px 0;
                 margin: 7px 7px 0 0;
                 background-color: @color-swatch7;
