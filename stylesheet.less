@@ -170,6 +170,10 @@ pre { /* fixes code option in editor */
                                 }
                         }
                     }
+                    a {
+                        color: @font-swatch6-color-hover;
+                        text-decoration: none;
+                    }
                 }
                 a {
                     display: block;
@@ -180,13 +184,6 @@ pre { /* fixes code option in editor */
                     color: @font-swatch6-color;
                     line-height: @font-swatch6-line-height;
                     letter-spacing: @font-swatch6-letter-spacing;
-                    &:hover {
-                        color: @font-swatch6-color-hover;
-                        text-decoration: none;
-                        @media @tablet {
-                            color: @font-swatch6-color;
-                        }
-                    }
                     @media @tablet {
                         padding: 0 5%;
                     }
@@ -200,18 +197,15 @@ pre { /* fixes code option in editor */
                         .text {
                             color: @font-swatch6-color-hover;
                             text-decoration: none;
-                            @media @tablet {
-                                color: @font-swatch6-color;
-                            }
                             &:after {
                                 color: @color-swatch1;
                             }
                         }
                         ul li a .text {
                             color: @font-swatch6-color;
-                            &:hover {
-                                color: @font-swatch6-color-hover;
-                            }
+                        }
+                        ul li:hover a .text {
+                            color: @font-swatch6-color-hover;
                         }
                     }
                     .text {
@@ -302,7 +296,13 @@ pre { /* fixes code option in editor */
     display: none;
 }
 
+/* ===============================
+  BUTTON CSS
+   =============================== */
 
+button.btn:hover {
+    background-color: @font-swatch7-background-color-hover;
+}
 
 /* ===============================
   ECOM - BASKET
@@ -1429,10 +1429,10 @@ width: 100%;
     background-color: @color-swatch3;
     border: none;
     @media only screen and (min-width: 1040px) {
-        width: 25px;
-        height: 25px;
-        margin-right: 1.9%;
-        margin-bottom: 1.9%;
+        width: 32px;
+        height: 32px;
+        margin-right: 1.5%;
+        margin-bottom: 1.5%;
     }
     &:hover {
         background-color: darken(@color-swatch3,10%);
