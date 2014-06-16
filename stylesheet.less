@@ -498,10 +498,10 @@ button.btn:hover {
     }
 }
 
-.main .widget.ecombasket, .tablet-basket-container { 
-    .widget.ecombasket {
+.main .widget.ecombasket, .tablet-basket-container .widget.ecombasket {
         width: 100%;
         display: inline-block;
+        margin: 5px 0;
         .ecombasket-pull {
             position: relative;
             height: 40px;
@@ -581,7 +581,7 @@ button.btn:hover {
                 }
             }
         }
-    }
+    
 }   
 
 
@@ -1474,8 +1474,7 @@ hr {
 .widget.ecomproductslist {
     margin-top: 12px;
     .productlist-display-form {
-        width: 66.5%;
-        margin: 3% 0 3% 3%;
+        margin: 3% 0;
         display: inline-block;
         @media @tablet {
             width: 100%;
@@ -1526,8 +1525,10 @@ hr {
                 margin-bottom: 12px;
                 padding: 8px 33px 8px 8px;
                 border: none;
-                background-color: darken(@color-swatch1,5%);
                 color: @color-swatch5;
+                background-color: darken(@color-swatch1,5%);
+                border: 1px solid darken(@color-swatch1,7%);
+                height: 40px;
                 @media @mobile {
                     border: none;
                     background-color: darken(@color-swatch1,12%);
@@ -1537,23 +1538,41 @@ hr {
             select::-ms-expand {
                 display: none;
             }
+            &.productlist-search {
+                input {
+                    background-color: darken(@color-swatch1,5%);
+                    border: 1px solid darken(@color-swatch1,7%);
+                    height: 40px; 
+                    @media @mobile {
+                        width: 100%;
+                        background-color: @color-swatch1;
+                        margin-bottom: 5px;
+                    }
+                }
+                .btn {
+                    height: 40px;
+                }
+            }
         }
     }
     .productlist-item-count {
-        width: 30%;
-        text-align: right;
         display: inline-block;
         margin-left: 0;
         @media @tablet {
             text-align: left;
             width: 100%;
-            margin-left: 3%;
         }
         @media @mobile {
-            margin-left: 0;
+            margin: 3% 0;
         }
     }
     .ecom-productslist-product {
+        a:hover {
+            color: @color-swatch2;
+            .ecom-productlist-info .ecom-productslist-title {
+                color: @color-swatch2;
+            }
+        }
         .ecom-productlist-info {
             padding-top: 5px;
             .ecom-productslist-title {
@@ -1563,9 +1582,6 @@ hr {
                 line-height: @font-swatch5-line-height;
                 letter-spacing: @font-swatch5-letter-spacing;
                 padding:0;
-                a {
-                    color: @font-swatch5-color;
-                }
             }
             .ecom-productlist-price {
                 color: @color-swatch2;
@@ -1575,6 +1591,49 @@ hr {
         }
     }
 }
+
+
+/* ===============================
+  ECOM - FEATURED PRODUCTS
+   =============================== */
+
+.widget.ecomfeaturedproducts {
+    .ecom-featuredproducts-header h2 {
+        text-align: center;
+        padding: 1.5em 0;
+        @media @tablet {
+            padding: 1em;
+        }
+    }
+    .ecom-featuredproducts-wrap .ecom-featuredproducts-product {
+        a:hover {
+            color: @color-swatch2;
+        }
+        .ecom-featuredproducts-image-wrap {
+            margin-bottom: 20px;
+            height: 300px;
+            @media @mobile {
+                height: 250px;
+            }
+        }
+        .ecom-featuredproducts-info {
+            .ecom-featuredproducts-title {
+                font-family: @font-swatch5-font-family;
+                font-size: @font-swatch5-font-size;
+                font-weight: @font-swatch5-font-weight;
+                line-height: @font-swatch5-line-height;
+                letter-spacing: @font-swatch5-letter-spacing;
+                padding: 0;
+            }
+            .ecom-featuredproducts-price {
+                color: @color-swatch2;
+                font-size: bkscale(@font-swatch5-font-size,1.1);
+                font-weight: 600;
+            }
+        }
+    }
+}
+
 
 /* ===============================
   ECOM - PRODUCT
@@ -1587,6 +1646,7 @@ hr {
             width: 55%;
             float: left;
             margin-bottom: 1em;
+            margin-right: 4%;
             @media @tablet {
                 width:100%;
             }
@@ -1627,7 +1687,6 @@ hr {
         .ecom-product-info {
             width: 41%;
             display: inline-block;
-            margin-left: 4%;
             @media @tablet {
                 width: 100%;
                 margin-left: 0;
@@ -1677,49 +1736,62 @@ hr {
                     padding: 1em;
                 }
             }
-        }
-        .btn {
-            width: 70%;
-            margin: 20px 0;
-            position: relative;
-            overflow: hidden;
-            &.ecom-product-add-to-cart-btn .text:before {
-                content: "";
-                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAYAAAACsSQRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhBODA2RUZDQUQxMDExRTM5QjhEODE2MThFQzkwRTcwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhBODA2RUZEQUQxMDExRTM5QjhEODE2MThFQzkwRTcwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTdGRkY1N0ZBRDA1MTFFMzlCOEQ4MTYxOEVDOTBFNzAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTdGRkY1ODBBRDA1MTFFMzlCOEQ4MTYxOEVDOTBFNzAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6URM0AAAAA8klEQVR42pyTzwoBQRyAd4RyEa0iL+LqrFwdlKfwIEpeQblyUcpJ2oMDJUdJScrBYWmLNL6pFbaxdvzq29n9zcw3O/8sKeVBvmIPwooYtFUk1SMFGSj4opyBxAYvLoTw+Pb85IjiqEYwiHYskBhY5tENSqZ/SBZBydpQMGY5rkGJC1cDSefbindleNzUBkATEqpPXONxoO6/b6EPE1jCDi5M4aODTmJDFYY0vkeZk9BMZ04xg02UNWEgVycpUuR/HVY4q4G0f4skDQ60dCeXXAVWUAq7D423nUhr6k9+nRMmycIOerobTa6mLh2Un7mHAAMA46vP26UXMz4AAAAASUVORK5CYII=);
-                background-repeat: no-repeat;
-                display: inline-block;
-                height: 15px;
-                width: 17px;
-                margin: 0 10px 0 0;
+            .btn {
+                width: 70%;
+                margin: 20px 0;
                 position: relative;
-                top:3px;
+                overflow: hidden;
+                &.ecom-product-add-to-cart-btn .text:before {
+                    content: "";
+                    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAYAAAACsSQRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhBODA2RUZDQUQxMDExRTM5QjhEODE2MThFQzkwRTcwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhBODA2RUZEQUQxMDExRTM5QjhEODE2MThFQzkwRTcwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTdGRkY1N0ZBRDA1MTFFMzlCOEQ4MTYxOEVDOTBFNzAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTdGRkY1ODBBRDA1MTFFMzlCOEQ4MTYxOEVDOTBFNzAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6URM0AAAAA8klEQVR42pyTzwoBQRyAd4RyEa0iL+LqrFwdlKfwIEpeQblyUcpJ2oMDJUdJScrBYWmLNL6pFbaxdvzq29n9zcw3O/8sKeVBvmIPwooYtFUk1SMFGSj4opyBxAYvLoTw+Pb85IjiqEYwiHYskBhY5tENSqZ/SBZBydpQMGY5rkGJC1cDSefbindleNzUBkATEqpPXONxoO6/b6EPE1jCDi5M4aODTmJDFYY0vkeZk9BMZ04xg02UNWEgVycpUuR/HVY4q4G0f4skDQ60dCeXXAVWUAq7D423nUhr6k9+nRMmycIOerobTa6mLh2Un7mHAAMA46vP26UXMz4AAAAASUVORK5CYII=);
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                    height: 15px;
+                    width: 17px;
+                    margin: 0 10px 0 0;
+                    position: relative;
+                    top:3px;
+                }
+                &.ecom-product-add-to-cart-btn.added {
+                    background-color: green;
+                    .text:before {
+                        content: "\2713";
+                        background-image: none;
+                        color: white;
+                        top: 0;
+                    }
+                }
+                @media @tablet {
+                    width:50%;
+                }
+                @media @mobile {
+                    width:100%;
+                } 
+                &.ecom-product-add-to-cart-btn .text:before {
+                    content: "";
+                    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAYAAAACsSQRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhBODA2RUZDQUQxMDExRTM5QjhEODE2MThFQzkwRTcwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhBODA2RUZEQUQxMDExRTM5QjhEODE2MThFQzkwRTcwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTdGRkY1N0ZBRDA1MTFFMzlCOEQ4MTYxOEVDOTBFNzAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTdGRkY1ODBBRDA1MTFFMzlCOEQ4MTYxOEVDOTBFNzAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6URM0AAAAA8klEQVR42pyTzwoBQRyAd4RyEa0iL+LqrFwdlKfwIEpeQblyUcpJ2oMDJUdJScrBYWmLNL6pFbaxdvzq29n9zcw3O/8sKeVBvmIPwooYtFUk1SMFGSj4opyBxAYvLoTw+Pb85IjiqEYwiHYskBhY5tENSqZ/SBZBydpQMGY5rkGJC1cDSefbindleNzUBkATEqpPXONxoO6/b6EPE1jCDi5M4aODTmJDFYY0vkeZk9BMZ04xg02UNWEgVycpUuR/HVY4q4G0f4skDQ60dCeXXAVWUAq7D423nUhr6k9+nRMmycIOerobTa6mLh2Un7mHAAMA46vP26UXMz4AAAAASUVORK5CYII=);
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                    height: 15px;
+                    width: 17px;
+                    margin: 0 10px 0 0;
+                    position: relative;
+                    top:3px;
+                }               
             }
-            &.ecom-product-add-to-cart-btn.added {
-                background-color: green;
-                .text:before {
-                    content: "\2713";
-                    background-image: none;
+            .btn.ecom-product-go-to-checkout-btn {
+                padding: 10px 20px;
+                &:after {
+                    content: "\003E";
                     color: white;
                     top: 0;
+                    padding-left: 5px;
+                }
+                &:hover {
+                    text-decoration: none;
+                    background-color: @font-swatch7-background-color-hover;
                 }
             }
-            @media @tablet {
-                width:50%;
-            }
-            @media @mobile {
-                width:100%;
-            } 
-            &.ecom-product-add-to-cart-btn .text:before {
-                content: "";
-                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAYAAAACsSQRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhBODA2RUZDQUQxMDExRTM5QjhEODE2MThFQzkwRTcwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhBODA2RUZEQUQxMDExRTM5QjhEODE2MThFQzkwRTcwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTdGRkY1N0ZBRDA1MTFFMzlCOEQ4MTYxOEVDOTBFNzAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTdGRkY1ODBBRDA1MTFFMzlCOEQ4MTYxOEVDOTBFNzAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6URM0AAAAA8klEQVR42pyTzwoBQRyAd4RyEa0iL+LqrFwdlKfwIEpeQblyUcpJ2oMDJUdJScrBYWmLNL6pFbaxdvzq29n9zcw3O/8sKeVBvmIPwooYtFUk1SMFGSj4opyBxAYvLoTw+Pb85IjiqEYwiHYskBhY5tENSqZ/SBZBydpQMGY5rkGJC1cDSefbindleNzUBkATEqpPXONxoO6/b6EPE1jCDi5M4aODTmJDFYY0vkeZk9BMZ04xg02UNWEgVycpUuR/HVY4q4G0f4skDQ60dCeXXAVWUAq7D423nUhr6k9+nRMmycIOerobTa6mLh2Un7mHAAMA46vP26UXMz4AAAAASUVORK5CYII=);
-                background-repeat: no-repeat;
-                display: inline-block;
-                height: 15px;
-                width: 17px;
-                margin: 0 10px 0 0;
-                position: relative;
-                top:3px;
-            }               
         }
         .ecom-product-long-description {
             padding-top: 20px;
